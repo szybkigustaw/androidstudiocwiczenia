@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Exercise 3.2</string>
+    <plurals name="quantity_of_items">
+        <item quantity="one">one item</item>
+        <item quantity="few">%d items</item>
+        <item quantity="many">%d items</item>
+    </plurals>
+</resources>
