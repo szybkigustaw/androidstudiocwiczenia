@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exercise 3.1</string>
+    <plurals name="quantity_of_items">
+        <item quantity="zero">zero items</item>
+        <item quantity="one">%d item</item>
+        <item quantity="few">%d items</item>
+        <item quantity="many">%d items</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+</resources>
