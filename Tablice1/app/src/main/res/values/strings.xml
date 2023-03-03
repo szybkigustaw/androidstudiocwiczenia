@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Tablice 1</string>
+    <string-array name="voivodeships">
+        <item>Zachodnio-pomorskie</item>
+        <item>Pomorskie</item>
+        <item>Warmińsko-mazurskie</item>
+        <item>Podlaskie</item>
+        <item>Mazowieckie</item>
+        <item>Kujawsko-pomorskie</item>
+        <item>Wielkopolskie</item>
+        <item>Lubuskie</item>
+        <item>Łódzkie</item>
+        <item>Świętokrzyskie</item>
+        <item>Lubelskie</item>
+        <item>Podkarpackie</item>
+        <item>Małopolskie</item>
+        <item>Śląskie</item>
+        <item>Opolskie</item>
+        <item>Dolnośląskie</item>
+    </string-array>
+</resources>
