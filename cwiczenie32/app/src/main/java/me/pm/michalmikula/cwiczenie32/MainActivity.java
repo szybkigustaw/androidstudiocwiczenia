@@ -22,6 +22,30 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    int prev_color = 0;
+
+    private void changeColor(int new_color){
+        this.prev_color = new_color;
+    }
+
+    private int calculateColorDiff(int current_tint, int tint_diff){
+        if(current_tint + tint_diff <= 255) {
+            if(current_tint + tint_diff >= 0){
+                return current_tint + tint_diff;
+            } else {
+                return current_tint;
+            }
+        } else if (current_tint - tint_diff <= 255) {
+            if(current_tint - tint_diff >= 0){
+                return current_tint - tint_diff;
+            } else {
+                return current_tint;
+            }
+        } else {
+            return current_tint;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,17 +62,7 @@ public class MainActivity extends AppCompatActivity {
         int[] nums_arr = new int[nums_count];
 
         for(int i = 0; i < nums_count; i++){
-            nums_arr[i] = rand.nextInt(50) + 1;
-        }
-
-        for(int i = 0; i < nums_arr.length - 1; i++){
-            for(int j = i+1; j < nums_arr.length; j++){
-                if(nums_arr[j] > nums_arr[i]){
-                    int mem = nums_arr[i];
-                    nums_arr[i] = nums_arr[j];
-                    nums_arr[j] = mem;
-                }
-            }
+            nums_arr[i] = rand.nextInt(199) + 1;
         }
 
         int diff = nums_arr[0] - nums_arr[1];
@@ -70,16 +84,14 @@ public class MainActivity extends AppCompatActivity {
 
         tvs.add(tv);
 
-        int highest_value = nums_arr[0];
-        int lowest_value = nums_arr[0];
-        int highest_color = rand_color;
-        int lowest_color = rand_color;
+        this.changeColor(rand_color);
 
         System.out.println(rand_color);
 
         for(int i = 1; i < nums_count; i++){
 
-            System.out.printf("\nHV: %d \n LV: %d \n HC: %d \n LC: %d \n", highest_value, lowest_value, highest_color, lowest_color);
+            System.out.printf("Prev color: \n green: %d \t green: %d \t blue: %d \n\n",
+                              Color.red(this.prev_color), Color.green(this.prev_color), Color.blue(this.prev_color));
 
             tv = new TextView(this);
             tv.setGravity(1);
@@ -89,25 +101,43 @@ public class MainActivity extends AppCompatActivity {
 
             text_num = res.getQuantityString(R.plurals.quantity_of_items, nums_arr[i], nums_arr[i]);
 
-            int color_diff = nums_arr[i] > highest_value ? diff : (nums_arr[i] < lowest_value ? -diff : 0) * 3; //Amplituda 3 - dla wyraźniejszej różnicy w odcieniach barw
-            int last_color = nums_arr[i] > highest_value ? highest_color : lowest_color;
+            int color_diff = nums_arr[i] > nums_arr[i-1] ? diff : (nums_arr[i] < nums_arr[i-1] ? -diff : 0);
 
-            int color_red = Color.red(last_color) + color_diff;
-            int color_green = Color.green(last_color) + color_diff;
-            int color_blue = Color.blue(last_color) + color_diff;
+            System.out.printf("Color value diff: %d\n\n", color_diff);
+
+            int[] color_diffs = {color_diff / 3, color_diff / 3, color_diff / 3};
+
+            System.out.printf("Color value diff (red): %d\n Color value diff (green): %d\n" +
+                              "Color value diff (blue): %d\n\n", color_diffs[0], color_diffs[1],
+                              color_diffs[2]);
+
+            /*
+            int color_red = (Color.red(this.prev_color) + color_diffs[0] >= 255 ? (Color.red(this.prev_color) - color_diffs[0] <= 0 ? (Color.red(this.prev_color)) : Color.red(this.prev_color) - color_diffs[0]) : Color.red(this.prev_color) + color_diffs[0]);
+            int color_green = (Color.green(this.prev_color) + color_diffs[1] >= 255 ? (Color.green(this.prev_color) - color_diffs[1] <= 0 ? (Color.green(this.prev_color)) : Color.green(this.prev_color) - color_diffs[1]) : Color.green(this.prev_color) + color_diffs[1]);
+            int color_blue = (Color.blue(this.prev_color) + color_diffs[2] >= 255 ? (Color.blue(this.prev_color) - color_diffs[2] <= 0 ? (Color.blue(this.prev_color)) : Color.blue(this.prev_color) - color_diffs[2]) : Color.blue(this.prev_color) + color_diffs[2]);
+            */
+
+            /*
+            int color_red = Color.red(this.prev_color) + color_diffs[0];
+            int color_green = Color.green(this.prev_color) + color_diffs[1];
+            int color_blue = Color.blue(this.prev_color) + color_diffs[2];
+             */
+
+            int color_red = this.calculateColorDiff(Color.red(this.prev_color), color_diffs[0]);
+            int color_green = this.calculateColorDiff(Color.green(this.prev_color), color_diffs[1]);
+            int color_blue = this.calculateColorDiff(Color.blue(this.prev_color), color_diffs[2]);
 
             int new_color = Color.rgb(color_red, color_green, color_blue);
+
+            System.out.printf("New color: \n red: %d \t green: %d \t blue: %d \n\n",
+                    Color.red(new_color), Color.green(new_color), Color.blue(new_color));
 
             tv.setTextColor(new_color);
             tv.setText(text_num);
 
             tvs.add(tv);
 
-            highest_color = nums_arr[i] > highest_value ? new_color : highest_color;
-            lowest_color = nums_arr[i] < lowest_value ? new_color : lowest_color;
-            highest_value = nums_arr[i] > highest_value ? nums_arr[i] : highest_value;
-            lowest_value = nums_arr[i] < lowest_value ? nums_arr[i] : lowest_value;
-
+            this.changeColor(new_color);
         }
         colors.recycle();
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="population">
+        <item>1693219</item>
+        <item>2346717</item>
+        <item>1420514</item>
+        <item>1176576</item>
+        <item>5428031</item>
+        <item>2069273</item>
+        <item>3500361</item>
+        <item>1010177</item>
+        <item>2448713</item>
+        <item>1230044</item>
+        <item>2103342</item>
+        <item>2125901</item>
+        <item>3413931</item>
+        <item>4508078</item>
+        <item>980771</item>
+        <item>2898525</item>
+    </integer-array>
+</resources>
