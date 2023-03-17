@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tables 4</string>
+
+    <string-array name="voivodeships">
+        <item>Zachodnio-pomorskie</item>
+        <item>Pomorskie</item>
+        <item>Warmińsko-mazurskie</item>
+        <item>Podlaskie</item>
+        <item>Mazowieckie</item>
+        <item>Kujawsko-pomorskie</item>
+        <item>Wielkopolskie</item>
+        <item>Lubuskie</item>
+        <item>Łódzkie</item>
+        <item>Świętokrzyskie</item>
+        <item>Lubelskie</item>
+        <item>Podkarpackie</item>
+        <item>Małopolskie</item>
+        <item>Śląskie</item>
+        <item>Opolskie</item>
+        <item>Dolnośląskie</item>
+    </string-array>
+
+    <plurals name="quantity_of_people">
+       <item quantity="one">%d denizen</item>
+       <item quantity="few">%d denizens</item>
+       <item quantity="many">%d denizens</item>
+    </plurals>
+
+    <string name="column_0">Voivodeship name</string>
+    <string name="column_1">Population in 2018r</string>
+    <string name="column_2">Population in 2020r</string>
+    <string name="column_3">Difference</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="app_name">Tablice 4</string>
+
+    <string-array name="voivodeships">
+       <item>Zachodnio-pomorskie</item>
+       <item>Pomorskie</item>
+       <item>Warmińsko-mazurskie</item>
+       <item>Podlaskie</item>
+       <item>Mazowieckie</item>
+       <item>Kujawsko-pomorskie</item>
+       <item>Wielkopolskie</item>
+       <item>Lubuskie</item>
+       <item>Łódzkie</item>
+       <item>Świętokrzyskie</item>
+       <item>Lubelskie</item>
+       <item>Podkarpackie</item>
+       <item>Małopolskie</item>
+       <item>Śląskie</item>
+       <item>Opolskie</item>
+       <item>Dolnośląskie</item>
+   </string-array>
+
+   <plurals name="quantity_of_people">
+      <item quantity="one">%d mieszkaniec</item>
+      <item quantity="few">%d mieszkańcy</item>
+      <item quantity="many">%d mieszkańców</item>
+   </plurals>
+
+   <string name="column_0">Nazwa województwa</string>
+   <string name="column_1">Populacja w 2018r</string>
+   <string name="column_2">Populacja w 2020r</string>
+   <string name="column_3">Różnica</string>
+</resources>

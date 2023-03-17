@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="population_in_2020">
+        <item>1693219</item> <!-- zachodnio-pomorskie -->
+        <item>2346717</item> <!-- pomorskie -->
+        <item>1420514</item> <!-- warmińsko-mazurskie -->
+        <item>1176576</item> <!-- podlaskie -->
+        <item>5428031</item> <!-- mazowieckie -->
+        <item>2069273</item> <!-- kujawsko-pomorskie -->
+        <item>3500361</item> <!-- wielkopolskie -->
+        <item>1010177</item> <!-- lubuskie -->
+        <item>2448713</item> <!-- łódzkie -->
+        <item>1230044</item> <!-- świętokrzyskie -->
+        <item>2103342</item> <!-- lubelskie -->
+        <item>2125901</item> <!-- podkarpackie -->
+        <item>3413931</item> <!-- małopolskie -->
+        <item>4508078</item> <!-- śląskie -->
+        <item>980771</item> <!-- opolskie -->
+        <item>2898525</item> <!-- dolnośląskie -->
+    </integer-array>
+
+    <integer-array name="population_in_2018">
+        <item>1701000</item> <!-- zachodnio-pomorskie -->
+        <item>2333500</item> <!-- pomorskie -->
+        <item>1429000</item> <!-- warmińsko-mazurskie -->
+        <item>1181500</item> <!-- podlaskie -->
+        <item>5403400</item> <!-- mazowieckie -->
+        <item>2077800</item> <!-- kujawsko-pomorskie -->
+        <item>3494000</item> <!-- wielkopolskie -->
+        <item>1014500</item> <!-- lubuskie -->
+        <item>2466300</item> <!-- łódzkie -->
+        <item>1241500</item> <!-- świętokrzyskie -->
+        <item>2117600</item> <!-- lubelskie -->
+        <item>2129000</item> <!-- podkarpackie -->
+        <item>3400600</item> <!-- małopolskie -->
+        <item>4533600</item> <!-- śląskie -->
+        <item>986500</item> <!-- opolskie -->
+        <item>2901200</item> <!-- dolnośląskie -->
+    </integer-array>
+</resources>
